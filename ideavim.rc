@@ -1,0 +1,65 @@
+let mapleader=" "
+
+set surround
+set multiple-cursors
+set commentary
+set easymotion
+set NERDTree
+
+set splitright
+set relativenumber
+
+imap fd <Esc>
+map <leader>fa :vsp ~/.ideactions<CR>
+map <leader>fk :e ~/.ideavimrc<CR>
+map <leader>fy :source ~/.ideavimrc<CR>
+
+function CloseOther()
+    action CloseAllToTheLeft
+    action CloseAllToTheRight
+endfunction
+
+map <c-t> <Action>(ActivateTerminalToolWindow)
+map <leader>ot <Action>(ActivateTerminalToolWindow)
+
+map <c-/> <Action>(CommentByLineComment)
+map <c-s-/> :actionlist<CR>
+map <s-j> <Action>(PreviousTab)
+map <s-k> <Action>(NextTab)
+map <leader>jl <Action>(EditorJoinLines)
+map <c-h> <c-w>h
+map <c-l> <c-w>l
+
+
+map <leader>d <Action>(Debug)
+map <leader>rn <Action>(RenameElement)
+map <leader>c <Action>(Stop)
+map <leader>t <Action>(Run)
+map <leader>z <Action>(ToggleDistractionFreeMode)
+
+map <leader>a <Action>(Annotate)
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+map <S-Space> <Action>(GotoNextError)
+
+map <leader>rf <Action>(ReformatCode)
+
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>op <Action>(FileStructurePopup)
+map <leader>sp <Action>(ManageRecentProjects)
+
+map <leader>np <Action>(ActivateNuGetToolWindow)
+map <leader>ns <Action>(Rider.Web.DotNetUserSecrets)
+
+map <leader>qo :call CloseOther()<CR>
+map <leader>qc :close<CR>
+map <leader>qr <Action>(CloseAllToTheRight)
+map <leader>ql <Action>(CloseAllToTheLeft)
+
+map <leader>pv <Action>(SelectInProjectView)
+
+map <leader>rc <Action>(editRunConfigurations)
+
+map <leader>gs <Action>(LoadKtGradleConfiguration)
+
+map <leader>sp <Action>(GotoFile)
+map <leader><leader> <Action>(GotoFile)
