@@ -1,5 +1,5 @@
-{home-manager, pkgs, ...}: {
-  imports = [ ../users/common.nix ]
+{ ... }: {
+  imports = [ ../home.nix ];
 
   home.username = "gitpod";
   home.homeDirectory = "/home/gitpod";

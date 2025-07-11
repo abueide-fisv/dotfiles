@@ -15,10 +15,19 @@
       ];
       systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin" ];
       perSystem = { config, self', inputs', pkgs, system, ... }: {
-        packages.default = pkgs.hello;
-      };
+              };
       flake = {
-        home-manager.users.gitpod = ./gitpod.nix;
+        homeConfigurations = {
+          "gitpod@gitpod" = inputs.home-manager.lib.homeManagerConfiguration {
+            pkgs = import inputs.nixpkgs {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
+            modules = [
+              ./users/gitpod.nix
+            ];
+          };
+        };
       };
     };
 }
