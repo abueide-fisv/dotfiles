@@ -2,4 +2,4 @@
 source ~/.bashrc
 source ~/.profile
 
-nix run home-manager/master -- switch --flake .
+#nix run home-manager/master -- switch --flake .
